@@ -1,4 +1,7 @@
-streamlit
 psycopg2-binary
-pandas
 requests
+streamlit
+pandas
+plotly
+matplotlib
+scikit-learn
