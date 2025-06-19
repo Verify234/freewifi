@@ -9,7 +9,15 @@ if "user" not in st.session_state:
     st.stop()
     
 st.title("WiFi Analytics Dashboard")
-st.autorefresh(interval=5000)
+import time
+
+# Place this somewhere in your Streamlit workflow
+if "last_refresh" not in st.session_state:
+    st.session_state["last_refresh"] = time.time()
+
+if time.time() - st.session_state["last_refresh"] > 5:  # 5 seconds
+    st.session_state["last_refresh"] = time.time()
+    st.experimental_rerun()
 
 df = load_data()
 st.dataframe(df)
