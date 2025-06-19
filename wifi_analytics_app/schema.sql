@@ -10,3 +10,4 @@ CREATE TABLE wifi_logs (
   email VARCHAR,
   phone VARCHAR
 );
+DROP TABLE IF EXISTS wifi_logs;
