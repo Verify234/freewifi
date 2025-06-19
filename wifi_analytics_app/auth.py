@@ -1,17 +1,24 @@
+# --- auth.py ---
 import streamlit as st
 
+# In a real app, integrate Firebase/Auth0 or OAuth (Google/Facebook)
 USERS = {
-    "admin": {"pw": "secretpw", "role": "admin"},
-    "manager": {"pw": "managerpw", "role": "manager"},
+    "admin": {"password": "admin123", "role": "admin"},
+    "guest": {"password": "guest123", "role": "guest"}
 }
 
-def login_widget():
-    st.sidebar.title("Login")
-    u = st.sidebar.text_input("User")
-    p = st.sidebar.text_input("Password", type="password")
-    if st.sidebar.button("Sign In"):
-        if u in USERS and USERS[u]["pw"] == p:
-            st.session_state.user = u
-            st.session_state.role = USERS[u]["role"]
-        else:
-            st.sidebar.error("Login failed")
+def login_user():
+    with st.sidebar:
+        st.title("🔐 Login")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        if st.button("Login"):
+            user = USERS.get(username)
+            if user and user["password"] == password:
+                st.session_state["user"] = username
+                st.session_state["role"] = user["role"]
+                st.success(f"Logged in as {username}")
+                return user["role"]
+            else:
+                st.error("Invalid credentials")
+    return st.session_state.get("role")
