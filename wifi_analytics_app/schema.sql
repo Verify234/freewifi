@@ -10,9 +10,8 @@ CREATE TABLE wifi_logs (
   email VARCHAR,
   phone VARCHAR
 );
-cur.execute("""
-    UPDATE wifi_logs 
-    SET dwell_time = EXTRACT(EPOCH FROM (NOW()-first_visit))::INT
-    WHERE "returning" = false
-""")
+
+  UPDATE wifi_logs 
+SET dwell_time = EXTRACT(EPOCH FROM (NOW()-first_visit))::INT
+WHERE returning = false
 DROP TABLE IF EXISTS wifi_logs;
