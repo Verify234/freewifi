@@ -7,8 +7,7 @@ from insights import load_data
 login_widget()
 if "user" not in st.session_state:
     st.stop()
-cur = conn.cursor()
-
+    
 st.title("WiFi Analytics Dashboard")
 st.autorefresh(interval=5000)
 
