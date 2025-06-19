@@ -6,7 +6,7 @@ def update_dwell_time():
     cur = conn.cursor()
     cur.execute("""
         UPDATE wifi_logs SET dwell_time = EXTRACT(EPOCH FROM (NOW()-first_visit))::INT
-        WHERE returning = false
+        WHERE "returning" = false
     """)
     conn.commit()
     cur.close()
