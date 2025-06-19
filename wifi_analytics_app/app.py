@@ -7,7 +7,7 @@ from insights import load_data
 login_widget()
 if "user" not in st.session_state:
     st.stop()
-
+cur = conn.cursor()
 update_dwell_time()
 
 st.title("WiFi Analytics Dashboard")
