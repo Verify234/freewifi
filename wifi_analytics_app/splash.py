@@ -1,11 +1,18 @@
+# --- splash.py ---
 import streamlit as st
-from insights import register_guest
+import datetime
 
 def splash_page():
-    st.title("Welcome to Free WiFi")
+    st.title("📶 Welcome to Free WiFi")
+    st.subheader("Please sign in to access internet")
+
     email = st.text_input("Email")
-    phone = st.text_input("Phone")
+    phone = st.text_input("Phone Number")
+    location = st.selectbox("Location", ["Store 1", "Store 2", "Store 3"])
+
     if st.button("Connect"):
-        register_guest(email, phone, st.session_state.get("device_type", "unknown"))
-        st.success("Connected!")
-        st.stop()
+        st.success("You're now connected! Enjoy browsing.")
+        st.session_state["connected"] = True
+        # Simulate data entry (in production: save to DB)
+        with open("connection_logs.csv", "a") as f:
+            f.write(f"{email},{phone},{location},{datetime.datetime.now()}\n")
