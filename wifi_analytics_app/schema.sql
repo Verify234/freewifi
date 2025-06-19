@@ -13,5 +13,5 @@ CREATE TABLE wifi_logs (
 
   UPDATE wifi_logs 
 SET dwell_time = EXTRACT(EPOCH FROM (NOW()-first_visit))::INT
-WHERE returning = false
+WHERE "returning" = false
 DROP TABLE IF EXISTS wifi_logs;
