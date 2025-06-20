@@ -7,7 +7,7 @@ def analytics_dashboard():
     st.write("Analytics dashboard content will be displayed here.")
     
 def load_business_data(business_type):
-    # Adjust filename to match your actual filenames
+    # Generate correct filename like "connection_logs_restaurant.csv"
     filename = f"connection_logs_{business_type.lower().replace(' ', '_')}.csv"
     filepath = os.path.join("connection_logs", filename)
 
@@ -15,5 +15,4 @@ def load_business_data(business_type):
         return pd.read_csv(filepath)
     else:
         raise FileNotFoundError(f"🚫 File not found: {filepath}")
-
 
