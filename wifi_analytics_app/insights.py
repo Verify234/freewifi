@@ -5,8 +5,12 @@ import streamlit as st
 import plotly.express as px
 
 def load_business_data(business_type):
+    def load_business_data(business_type):
     file_path = f"connection_logs/{business_type}.csv"
-    filepath = os.path.join("wifi_analytics_app", "connection_logs", filename)
+    if os.path.exists(file_path):
+        return pd.read_csv(file_path)
+    return None
+
 
     if os.path.exists(filepath):
         return pd.read_csv(filepath)
