@@ -7,12 +7,16 @@ from ai_models import show_ai_insights
 from automation import automation_controls
 from config import init_config
 from insights import load_business_data
-import zipfile
 import os
+import zipfile
 
 def extract_connection_logs():
-    zip_path = "connection_logs_by_business.zip"  # Keep in project root!
-    extract_dir = "connection_logs"
+    zip_path = "path/to/your/zipfile.zip"
+    if not os.path.exists(zip_path):
+        print(f"ZIP file not found: {zip_path}")
+        return
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall("connection_logs")
 
     if not os.path.exists(extract_dir):
         os.makedirs(extract_dir, exist_ok=True)
