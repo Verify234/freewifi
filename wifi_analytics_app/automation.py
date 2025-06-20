@@ -23,4 +23,11 @@ def automation_controls():
         with open(save_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
         st.success(f"✅ Uploaded and saved as {save_path}")
+            df = pd.read_csv(save_path)
+        if not required_columns.issubset(df.columns):
+            st.error("Uploaded file is missing required columns.")
+        else:
+            st.success(f"{len(df)} records validated for {business_type}")
+
+    
 
