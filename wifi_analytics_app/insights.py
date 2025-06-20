@@ -3,12 +3,11 @@ def analytics_dashboard():
     business_type = st.selectbox("Select Business Type", ["Restaurant", "Hospital", "Business Cafe", "Boutique", "Supermarket"])
     df = load_business_data(business_type)
 
-    required_columns = {"timestamp", "device_type", "duration"}  # Define this early
-
     if df is not None:
+        required_columns = {"timestamp", "device_type", "duration"}
         if not required_columns.issubset(df.columns):
             st.error("Uploaded file is missing required columns.")
-            return  # Stop further processing
+            return
 
         st.success(f"Loaded {len(df)} records for {business_type}")
         st.dataframe(df.head())
