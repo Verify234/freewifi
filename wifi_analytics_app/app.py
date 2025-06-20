@@ -24,9 +24,6 @@ def extract_connection_logs():
             zip_ref.extractall(extract_dir)
         print("✅ connection_logs extracted successfully.")
 
-extract_connection_logs()
-
-
 init_config()
 
 user_type = login_user()
