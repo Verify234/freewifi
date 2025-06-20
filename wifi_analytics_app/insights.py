@@ -61,3 +61,8 @@ def main_dashboard():
         # Optional: show_ai_insights(df)
     else:
         st.warning("No data loaded.")
+    # Example placeholder
+def analytics_dashboard():
+    import streamlit as st
+    st.title("📊 WiFi Usage Analytics")
+    st.write("Analytics dashboard content will be displayed here.")
