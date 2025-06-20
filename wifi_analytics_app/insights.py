@@ -11,6 +11,26 @@ def load_data():
     except:
         return pd.DataFrame(columns=["email", "phone", "location", "timestamp"])
 
+import os
+def load_business_data(business_type):
+    """Loads CSV data for the selected business type."""
+    file_map = {
+        "Restaurant": "connection_logs_restaurant.csv",
+        "Hospital": "connection_logs_hospital.csv",
+        "Business Cafe": "connection_logs_business_cafe.csv",
+        "Boutique": "connection_logs_boutique.csv",
+        "Supermarket": "connection_logs_supermarket.csv"
+    }
+
+    file_name = file_map.get(business_type)
+    file_path = os.path.join("connection_logs", file_name)
+
+    if not os.path.exists(file_path):
+        st.error(f"No data found for {business_type}. Please check that {file_path} exists.")
+        return None
+
+    return pd.read_csv(file_path)
+
 def analytics_dashboard():
     st.header("📊 WiFi Analytics Dashboard")
     df = load_data()
