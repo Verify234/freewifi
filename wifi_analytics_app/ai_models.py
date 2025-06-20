@@ -17,11 +17,12 @@ def show_ai_insights():
         return
 
     try:
-        df = pd.read_csv(filepath)
-        numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
-        if len(numeric_cols) < 2 or len(df) < 3:
-            st.warning("Not enough numeric data for clustering. Need at least 3 records and 2 numeric columns.")
-            return
+        numeric_df = df.select_dtypes(include='number')
+
+if numeric_df.shape[0] < 3 or numeric_df.shape[1] < 2:
+    st.error("🚫 Not enough numeric data for clustering. Need at least 3 records and 2 numeric columns.")
+    return
+
 
         X = df[numeric_cols].dropna()
         scaler = StandardScaler()
