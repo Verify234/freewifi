@@ -1,8 +1,11 @@
-# --- insights.py ---
 import streamlit as st
 import pandas as pd
 import os
 
+def analytics_dashboard():
+    st.title("📊 WiFi Usage Analytics")
+    st.write("Analytics dashboard content will be displayed here.")
+    
 def load_business_data(business_type):
     # Adjust filename to match your actual filenames
     filename = f"connection_logs_{business_type.lower().replace(' ', '_')}.csv"
