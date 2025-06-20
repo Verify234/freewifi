@@ -1,7 +1,7 @@
 # --- automation.py ---
 import streamlit as st
 import pandas as pd
- import os
+import os
 
 def automation_controls():
     st.header("⚙️ Automation Settings")
