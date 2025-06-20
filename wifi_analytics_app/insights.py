@@ -22,6 +22,7 @@ def extract_connection_logs():
         print("✅ Extracted connection logs.")
 
 extract_connection_logs()
+print("✅ insights.py loaded")
 
 
 # ⚙️ Initialize config
