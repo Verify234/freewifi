@@ -1,7 +1,7 @@
 # --- app.py (Main entry point) ---
 import streamlit as st
 from auth import login_user
-from splash import splash_page
+from myfolder.splash import splash_page
 from insights import analytics_dashboard
 from ai_models import show_ai_insights
 from automation import automation_controls
