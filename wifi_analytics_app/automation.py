@@ -17,7 +17,6 @@ def automation_controls():
 
     st.markdown("---")
 
-    # Dataset upload
     st.subheader("📤 Upload New Business Dataset")
 
     business_type = st.selectbox("Business Type", ["Boutique", "Business Cafe", "Hospital", "Restaurant", "Supermarket"])
@@ -25,15 +24,19 @@ def automation_controls():
 
     if uploaded_file:
         save_path = f"connection_logs/{business_type}.csv"
-            os.makedirs("connection_logs", exist_ok=True)
+        os.makedirs("connection_logs", exist_ok=True)
+        
         with open(save_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
         st.success(f"✅ Uploaded and saved as {save_path}")
 
         df = pd.read_csv(save_path)
-        required_columns = {"timestamp", "device_type", "duration"}  # Adjust as needed
+        required_columns = {"timestamp", "device_type", "duration"}
         if not required_columns.issubset(df.columns):
             st.error("Uploaded file is missing required columns.")
         else:
             st.success(f"{len(df)} records validated for {business_type}")
             st.dataframe(df.head())
+
+            # Simulated automation logic trigger
+            st.info(f"🛠️ Automation Triggered: {trigger} → {action}\n\nMessage: {content}")
