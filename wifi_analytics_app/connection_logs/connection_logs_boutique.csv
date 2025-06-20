@@ -1,4 +1,4 @@
-device_id,timestamp,duration_minutes,business_type,zone,device_type,duration_seconds,signal_strength_db,visit_count
+device_id,timestamp,duration_minutes,business_type,zone,device_type,
 D5837,2025-06-17 11:27:00,34,Boutique,Seating,Phone
 D4638,2025-06-17 16:27:00,3,Boutique,Entrance,Tablet
 D2655,2025-06-17 09:07:00,48,Boutique,Waiting Area,Laptop
