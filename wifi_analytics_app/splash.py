@@ -1,34 +1,18 @@
-# --- insights.py ---
+# --- splash.py ---
 import streamlit as st
-import pandas as pd
-import plotly.express as px
+import datetime
 
-def load_data():
-    try:
-        df = pd.read_csv("connection_logs.csv", names=["email", "phone", "location", "timestamp"])
-        df["timestamp"] = pd.to_datetime(df["timestamp"])
-        return df
-    except:
-        return pd.DataFrame(columns=["email", "phone", "location", "timestamp"])
+def splash_page():
+    st.title("📶 Welcome to Free WiFi")
+    st.subheader("Please sign in to access internet")
 
-def analytics_dashboard():
-    st.header("📊 WiFi Analytics Dashboard")
-    df = load_data()
+    email = st.text_input("Email")
+    phone = st.text_input("Phone Number")
+    location = st.selectbox("Location", ["Store 1", "Store 2", "Store 3"])
 
-    if df.empty:
-        st.warning("No data available yet.")
-        return
-
-    st.metric("Total Connections", len(df))
-    df["hour"] = df["timestamp"].dt.hour
-    df["date"] = df["timestamp"].dt.date
-
-    st.subheader("Connections by Hour")
-    fig = px.histogram(df, x="hour", nbins=24)
-    st.plotly_chart(fig)
-
-    st.subheader("Connections Over Time")
-    daily = df.groupby("date").size().reset_index(name="count")
-    st.line_chart(daily.set_index("date"))
-
-    st.download_button("Download Logs", df.to_csv(index=False), "wifi_logs.csv")
+    if st.button("Connect"):
+        st.success("You're now connected! Enjoy browsing.")
+        st.session_state["connected"] = True
+        # Simulate data entry (in production: save to DB)
+        with open("connection_logs.csv", "a") as f:
+            f.write(f"{email},{phone},{location},{datetime.datetime.now()}\n")
