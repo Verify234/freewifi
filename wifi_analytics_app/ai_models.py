@@ -1,40 +1,54 @@
 # --- ai_models.py ---
-import os
 import streamlit as st
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
-import plotly.express as px
 
 def show_ai_insights():
-    st.title("🧠 AI-Powered Insights")
-    business_type = st.selectbox("Select Business Type for AI", ["Restaurant", "Hospital", "Business Cafe", "Boutique", "Supermarket"])
-    filename = f"connection_logs_{business_type.lower().replace(' ', '_')}.csv"
-    filepath = os.path.join("wifi_analytics_app", "connection_logs", filename)
+    st.title("🧠 AI-Powered Customer Insights")
 
-    if not os.path.exists(filepath):
-        st.error(f"🚫 File not found: {filepath}")
-        return
+    # Simulate loading selected business type data from session
+    if 'selected_business_type' in st.session_state:
+        business_type = st.session_state['selected_business_type']
+        filepath = f"connection_logs/connection_logs_{business_type.lower().replace(' ', '_')}.csv"
 
-    try:
-        numeric_df = df.select_dtypes(include='number')
+        try:
+            df = pd.read_csv(filepath)
+        except FileNotFoundError:
+            st.error(f"🚫 File not found: {filepath}")
+            return
 
-if numeric_df.shape[0] < 3 or numeric_df.shape[1] < 2:
-    st.error("🚫 Not enough numeric data for clustering. Need at least 3 records and 2 numeric columns.")
-    return
+        st.subheader(f"Insights for {business_type}")
+        st.write("Sample of data loaded:")
+        st.dataframe(df.head())
 
+        numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
+        if len(numeric_cols) < 2:
+            st.warning("⚠️ Not enough numeric columns for clustering. Displaying basic insights instead.")
+            st.metric("Total Records", len(df))
+            st.metric("Avg. Session Duration", round(df[numeric_cols[0]].mean(), 2) if numeric_cols else "N/A")
+            return
 
+        if df.shape[0] < 3:
+            st.warning("⚠️ Not enough data points for clustering. Displaying descriptive insights.")
+            for col in numeric_cols:
+                st.metric(f"Average {col}", round(df[col].mean(), 2))
+            return
+
+        # Preprocess data
         X = df[numeric_cols].dropna()
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(X)
 
-        kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
-        kmeans.fit(X_scaled)
-        df['Cluster'] = kmeans.labels_
+        # Perform clustering
+        kmeans = KMeans(n_clusters=3, random_state=42)
+        clusters = kmeans.fit_predict(X_scaled)
+        df['cluster'] = clusters
 
-        st.success("✅ AI segmentation completed.")
-        fig = px.scatter_matrix(df, dimensions=numeric_cols, color='Cluster', title='Customer Segmentation')
-        st.plotly_chart(fig)
+        st.success("✅ AI segmentation complete")
 
-    except Exception as e:
-        st.error(f"AI Insight failed: {e}")
+        # Show cluster statistics
+        st.write("### Cluster Summary")
+        st.dataframe(df.groupby('cluster')[numeric_cols].mean().round(2))
+    else:
+        st.info("ℹ️ Please load a business type in the Analytics section first.")
