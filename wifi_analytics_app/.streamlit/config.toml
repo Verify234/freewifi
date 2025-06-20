@@ -4,3 +4,9 @@ backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#F0F2F6"
 textColor = "#262730"
 font = "sans serif"
+[server]
+# Comma-separated list of regex patterns to ignore for file watching.
+# This helps avoid 'inotify watch limit reached' errors on Streamlit Cloud.
+# Exclude directories that are not relevant to live code changes,
+# such as large data folders, virtual environments, etc.
+folderWatchBlacklist = ["data/", "logs/", "models/", "venv/", ".git/", "*.tmp", "connection_logs/"]
