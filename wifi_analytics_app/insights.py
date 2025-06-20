@@ -1,53 +1,64 @@
-# --- insights.py ---
+# --- app.py (Main entry point) ---
 import streamlit as st
-import pandas as pd
-import plotly.express as px
+import zipfile
+import os
 
-def load_data():
-    try:
-        df = pd.read_csv("connection_logs.csv", names=["email", "phone", "location", "timestamp"])
-        df["timestamp"] = pd.to_datetime(df["timestamp"])
-        return df
-    except:
-        return pd.DataFrame(columns=["email", "phone", "location", "timestamp"])
+from auth import login_user
+from splash import splash_page
+from insights import analytics_dashboard, load_business_data
+from ai_models import show_ai_insights
+from automation import automation_controls
+from config import init_config
 
-def analytics_dashboard():
-    st.header("📊 WiFi Analytics Dashboard")
-    df = load_data()
 
-    if df.empty:
-        st.warning("No data available yet.")
-        return
+# 📦 Unzip connection logs if not already extracted
+def extract_connection_logs():
+    zip_path = "connection_logs_by_business.zip"  # Must be in root directory
+    extract_dir = "connection_logs"
 
-    st.metric("Total Connections", len(df))
-    df["hour"] = df["timestamp"].dt.hour
-    df["date"] = df["timestamp"].dt.date
+    if not os.path.exists(extract_dir):
+        os.makedirs(extract_dir, exist_ok=True)
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            zip_ref.extractall(extract_dir)
+        print("✅ Extracted connection logs.")
 
-    st.subheader("Connections by Hour")
-    fig = px.histogram(df, x="hour", nbins=24)
-    st.plotly_chart(fig)
+extract_connection_logs()
 
-    st.subheader("Connections Over Time")
-    daily = df.groupby("date").size().reset_index(name="count")
-    st.line_chart(daily.set_index("date"))
 
-    st.download_button("Download Logs", df.to_csv(index=False), "wifi_logs.csv")
+# ⚙️ Initialize config
+init_config()
 
-    def load_business_data(business_type):
-    file_map = {
-        "Restaurant": "connection_logs_restaurant.csv",
-        "Hospital": "connection_logs_hospital.csv",
-        "Business Cafe": "connection_logs_business_cafe.csv",
-        "Boutique": "connection_logs_boutique.csv",
-        "Supermarket": "connection_logs_supermarket.csv"
-    }
+# 🔐 Authentication
+user_type = login_user()
 
-    file_name = file_map.get(business_type)
-    file_path = os.path.join("connection_logs", file_name)
+if user_type == "guest":
+    splash_page()
+elif user_type == "admin":
+    st.sidebar.title("Admin Dashboard")
+    tab = st.sidebar.radio("Navigate", ["Analytics", "AI Insights", "Automation"])
 
-    if not os.path.exists(file_path):
-        st.error(f"File not found: {file_path}")
-        return None
+    if tab == "Analytics":
+        analytics_dashboard()
+    elif tab == "AI Insights":
+        show_ai_insights()
+    elif tab == "Automation":
+        automation_controls()
+else:
+    st.warning("Unauthorized access.")
 
-    return pd.read_csv(file_path)
 
+# 🎯 Optional: Standalone dashboard access
+def main_dashboard():
+    st.title("📡 Free WiFi Analytics Dashboard")
+
+    business_type = st.selectbox("Select Business Type", ["Restaurant", "Hospital", "Business Cafe", "Boutique", "Supermarket"])
+
+    df = load_business_data(business_type)
+
+    if df is not None:
+        st.success(f"{len(df)} records loaded for {business_type}")
+        st.dataframe(df.head())
+
+        # Optional: show_ai_insights(df)
+    else:
+        st.warning("No data loaded.")
