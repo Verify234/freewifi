@@ -1,0 +1,101 @@
+device_id,timestamp,duration_minutes,business_type,zone,device_type
+D4087,2025-06-17 10:46:00,10,Hospital,Entrance,Tablet
+D2770,2025-06-17 15:56:00,45,Hospital,Entrance,Smartwatch
+D7698,2025-06-17 14:06:00,19,Hospital,Display Area,Smartwatch
+D3925,2025-06-17 10:25:00,22,Hospital,Entrance,Tablet
+D7688,2025-06-17 13:55:00,45,Hospital,Seating,Laptop
+D6455,2025-06-17 19:26:00,2,Hospital,Checkout,Laptop
+D9852,2025-06-17 09:51:00,14,Hospital,Entrance,Laptop
+D7825,2025-06-17 12:56:00,5,Hospital,Checkout,Laptop
+D9025,2025-06-17 17:18:00,20,Hospital,Entrance,Tablet
+D1167,2025-06-17 12:29:00,11,Hospital,Seating,Smartwatch
+D2845,2025-06-17 10:35:00,9,Hospital,Waiting Area,Phone
+D5555,2025-06-17 12:03:00,52,Hospital,Waiting Area,Phone
+D3516,2025-06-17 08:41:00,5,Hospital,Display Area,Phone
+D1543,2025-06-17 13:30:00,8,Hospital,Seating,Laptop
+D9450,2025-06-17 17:29:00,19,Hospital,Waiting Area,Tablet
+D6617,2025-06-17 10:43:00,25,Hospital,Seating,Smartwatch
+D5549,2025-06-17 12:12:00,33,Hospital,Checkout,Tablet
+D3076,2025-06-17 17:35:00,27,Hospital,Checkout,Smartwatch
+D5380,2025-06-17 17:31:00,59,Hospital,Checkout,Tablet
+D7937,2025-06-17 13:08:00,52,Hospital,Waiting Area,Laptop
+D3327,2025-06-17 14:35:00,33,Hospital,Seating,Laptop
+D1721,2025-06-17 19:17:00,57,Hospital,Checkout,Laptop
+D2508,2025-06-17 18:36:00,7,Hospital,Display Area,Tablet
+D4988,2025-06-17 09:43:00,58,Hospital,Seating,Phone
+D2311,2025-06-17 08:43:00,49,Hospital,Entrance,Laptop
+D1821,2025-06-17 15:34:00,22,Hospital,Seating,Laptop
+D6827,2025-06-17 16:12:00,50,Hospital,Entrance,Phone
+D4304,2025-06-17 10:24:00,56,Hospital,Seating,Tablet
+D1273,2025-06-17 09:57:00,39,Hospital,Entrance,Phone
+D5835,2025-06-17 18:34:00,48,Hospital,Checkout,Phone
+D9898,2025-06-17 15:10:00,45,Hospital,Seating,Laptop
+D4385,2025-06-17 11:58:00,48,Hospital,Entrance,Phone
+D7362,2025-06-17 16:15:00,27,Hospital,Entrance,Phone
+D3266,2025-06-17 15:00:00,55,Hospital,Display Area,Tablet
+D4914,2025-06-17 10:47:00,20,Hospital,Entrance,Laptop
+D3273,2025-06-17 09:48:00,41,Hospital,Seating,Laptop
+D4913,2025-06-17 13:58:00,13,Hospital,Waiting Area,Smartwatch
+D1498,2025-06-17 17:53:00,47,Hospital,Seating,Laptop
+D3912,2025-06-17 14:42:00,41,Hospital,Display Area,Phone
+D9845,2025-06-17 09:11:00,53,Hospital,Display Area,Smartwatch
+D6576,2025-06-17 12:51:00,60,Hospital,Checkout,Smartwatch
+D8284,2025-06-17 15:40:00,37,Hospital,Seating,Laptop
+D3591,2025-06-17 12:25:00,12,Hospital,Checkout,Laptop
+D8480,2025-06-17 08:46:00,5,Hospital,Display Area,Smartwatch
+D2719,2025-06-17 14:36:00,27,Hospital,Waiting Area,Smartwatch
+D8608,2025-06-17 15:23:00,2,Hospital,Waiting Area,Smartwatch
+D7207,2025-06-17 18:10:00,22,Hospital,Display Area,Phone
+D9267,2025-06-17 19:51:00,18,Hospital,Seating,Tablet
+D5114,2025-06-17 14:26:00,23,Hospital,Waiting Area,Tablet
+D5006,2025-06-17 11:58:00,14,Hospital,Display Area,Laptop
+D5622,2025-06-17 14:19:00,46,Hospital,Entrance,Laptop
+D4523,2025-06-17 15:26:00,31,Hospital,Display Area,Laptop
+D3774,2025-06-17 12:37:00,4,Hospital,Waiting Area,Tablet
+D8930,2025-06-17 12:59:00,47,Hospital,Display Area,Laptop
+D2035,2025-06-17 09:30:00,19,Hospital,Checkout,Phone
+D8758,2025-06-17 16:33:00,42,Hospital,Entrance,Smartwatch
+D6781,2025-06-17 12:32:00,7,Hospital,Checkout,Phone
+D6349,2025-06-17 13:28:00,60,Hospital,Waiting Area,Smartwatch
+D3660,2025-06-17 17:12:00,50,Hospital,Checkout,Smartwatch
+D7388,2025-06-17 12:00:00,39,Hospital,Waiting Area,Laptop
+D5195,2025-06-17 13:30:00,13,Hospital,Display Area,Smartwatch
+D1518,2025-06-17 12:31:00,35,Hospital,Waiting Area,Laptop
+D3581,2025-06-17 13:35:00,53,Hospital,Seating,Laptop
+D4817,2025-06-17 11:15:00,58,Hospital,Waiting Area,Smartwatch
+D7047,2025-06-17 15:36:00,47,Hospital,Seating,Smartwatch
+D8043,2025-06-17 08:52:00,16,Hospital,Waiting Area,Smartwatch
+D5188,2025-06-17 10:38:00,17,Hospital,Entrance,Smartwatch
+D7910,2025-06-17 17:27:00,46,Hospital,Entrance,Phone
+D7692,2025-06-17 08:01:00,33,Hospital,Entrance,Phone
+D7033,2025-06-17 12:51:00,40,Hospital,Checkout,Phone
+D5949,2025-06-17 09:17:00,30,Hospital,Waiting Area,Tablet
+D1459,2025-06-17 19:07:00,45,Hospital,Waiting Area,Laptop
+D7259,2025-06-17 12:28:00,25,Hospital,Seating,Tablet
+D9274,2025-06-17 15:04:00,53,Hospital,Seating,Tablet
+D1016,2025-06-17 08:22:00,5,Hospital,Display Area,Smartwatch
+D7840,2025-06-17 16:05:00,14,Hospital,Checkout,Smartwatch
+D4548,2025-06-17 17:30:00,7,Hospital,Entrance,Phone
+D4714,2025-06-17 18:36:00,32,Hospital,Display Area,Smartwatch
+D6186,2025-06-17 10:50:00,1,Hospital,Entrance,Laptop
+D8139,2025-06-17 10:58:00,41,Hospital,Waiting Area,Smartwatch
+D4775,2025-06-17 15:00:00,51,Hospital,Entrance,Phone
+D1932,2025-06-17 12:00:00,27,Hospital,Entrance,Laptop
+D8001,2025-06-17 15:41:00,9,Hospital,Entrance,Tablet
+D3785,2025-06-17 17:19:00,2,Hospital,Seating,Laptop
+D6035,2025-06-17 14:15:00,30,Hospital,Checkout,Smartwatch
+D6091,2025-06-17 17:47:00,42,Hospital,Seating,Phone
+D2467,2025-06-17 12:59:00,47,Hospital,Display Area,Tablet
+D3732,2025-06-17 17:13:00,24,Hospital,Entrance,Laptop
+D5881,2025-06-17 15:38:00,37,Hospital,Waiting Area,Phone
+D5127,2025-06-17 16:12:00,16,Hospital,Display Area,Phone
+D3825,2025-06-17 18:42:00,59,Hospital,Waiting Area,Tablet
+D1534,2025-06-17 11:35:00,38,Hospital,Display Area,Smartwatch
+D2250,2025-06-17 17:59:00,12,Hospital,Seating,Laptop
+D7464,2025-06-17 18:51:00,33,Hospital,Waiting Area,Tablet
+D6075,2025-06-17 10:02:00,6,Hospital,Display Area,Smartwatch
+D5839,2025-06-17 19:01:00,57,Hospital,Waiting Area,Laptop
+D3798,2025-06-17 15:26:00,50,Hospital,Entrance,Laptop
+D9858,2025-06-17 12:53:00,15,Hospital,Checkout,Tablet
+D9345,2025-06-17 10:40:00,4,Hospital,Entrance,Phone
+D5842,2025-06-17 15:45:00,59,Hospital,Seating,Phone

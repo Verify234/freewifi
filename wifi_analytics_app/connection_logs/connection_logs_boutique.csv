@@ -1,0 +1,101 @@
+device_id,timestamp,duration_minutes,business_type,zone,device_type
+D5837,2025-06-17 11:27:00,34,Boutique,Seating,Phone
+D4638,2025-06-17 16:27:00,3,Boutique,Entrance,Tablet
+D2655,2025-06-17 09:07:00,48,Boutique,Waiting Area,Laptop
+D5677,2025-06-17 17:55:00,15,Boutique,Display Area,Laptop
+D7893,2025-06-17 12:43:00,4,Boutique,Entrance,Tablet
+D5766,2025-06-17 08:19:00,45,Boutique,Waiting Area,Laptop
+D7653,2025-06-17 11:55:00,22,Boutique,Waiting Area,Laptop
+D3230,2025-06-17 08:04:00,38,Boutique,Checkout,Tablet
+D4430,2025-06-17 09:59:00,51,Boutique,Entrance,Phone
+D3135,2025-06-17 15:05:00,21,Boutique,Entrance,Laptop
+D2579,2025-06-17 14:57:00,31,Boutique,Display Area,Laptop
+D1511,2025-06-17 12:42:00,46,Boutique,Display Area,Phone
+D1884,2025-06-17 11:16:00,29,Boutique,Display Area,Phone
+D2466,2025-06-17 14:08:00,30,Boutique,Seating,Phone
+D2502,2025-06-17 09:35:00,21,Boutique,Checkout,Smartwatch
+D6576,2025-06-17 12:28:00,48,Boutique,Checkout,Smartwatch
+D9021,2025-06-17 12:53:00,35,Boutique,Entrance,Phone
+D6575,2025-06-17 10:21:00,6,Boutique,Waiting Area,Laptop
+D3050,2025-06-17 09:26:00,38,Boutique,Waiting Area,Tablet
+D1627,2025-06-17 18:29:00,1,Boutique,Seating,Laptop
+D6716,2025-06-17 09:32:00,11,Boutique,Checkout,Tablet
+D5775,2025-06-17 09:27:00,39,Boutique,Seating,Phone
+D7411,2025-06-17 10:49:00,24,Boutique,Waiting Area,Tablet
+D2170,2025-06-17 14:53:00,40,Boutique,Display Area,Smartwatch
+D2347,2025-06-17 16:39:00,28,Boutique,Seating,Laptop
+D3673,2025-06-17 12:34:00,26,Boutique,Seating,Phone
+D4619,2025-06-17 17:28:00,24,Boutique,Entrance,Phone
+D3753,2025-06-17 17:32:00,25,Boutique,Seating,Smartwatch
+D5486,2025-06-17 08:40:00,56,Boutique,Entrance,Phone
+D5770,2025-06-17 13:14:00,15,Boutique,Waiting Area,Phone
+D3728,2025-06-17 15:05:00,43,Boutique,Checkout,Tablet
+D6425,2025-06-17 09:26:00,3,Boutique,Display Area,Laptop
+D9681,2025-06-17 17:56:00,19,Boutique,Waiting Area,Smartwatch
+D1910,2025-06-17 09:23:00,1,Boutique,Checkout,Tablet
+D6001,2025-06-17 14:54:00,55,Boutique,Display Area,Laptop
+D5505,2025-06-17 15:41:00,51,Boutique,Checkout,Tablet
+D3599,2025-06-17 11:22:00,53,Boutique,Seating,Phone
+D2375,2025-06-17 14:07:00,25,Boutique,Seating,Smartwatch
+D3745,2025-06-17 15:20:00,15,Boutique,Checkout,Phone
+D2087,2025-06-17 10:16:00,38,Boutique,Checkout,Laptop
+D5437,2025-06-17 18:37:00,34,Boutique,Checkout,Smartwatch
+D7508,2025-06-17 12:05:00,26,Boutique,Seating,Smartwatch
+D1001,2025-06-17 09:27:00,60,Boutique,Display Area,Laptop
+D9161,2025-06-17 13:55:00,55,Boutique,Seating,Phone
+D5943,2025-06-17 10:40:00,28,Boutique,Entrance,Tablet
+D3440,2025-06-17 11:53:00,40,Boutique,Seating,Smartwatch
+D8268,2025-06-17 08:43:00,48,Boutique,Seating,Laptop
+D9999,2025-06-17 08:45:00,31,Boutique,Checkout,Laptop
+D8113,2025-06-17 13:23:00,30,Boutique,Display Area,Tablet
+D5817,2025-06-17 15:29:00,37,Boutique,Seating,Smartwatch
+D2126,2025-06-17 09:55:00,50,Boutique,Checkout,Tablet
+D4001,2025-06-17 14:35:00,53,Boutique,Checkout,Smartwatch
+D1053,2025-06-17 14:26:00,40,Boutique,Entrance,Smartwatch
+D3442,2025-06-17 19:52:00,55,Boutique,Entrance,Phone
+D6445,2025-06-17 17:59:00,28,Boutique,Seating,Laptop
+D4765,2025-06-17 11:02:00,42,Boutique,Seating,Smartwatch
+D1544,2025-06-17 10:27:00,33,Boutique,Display Area,Smartwatch
+D5603,2025-06-17 13:04:00,60,Boutique,Waiting Area,Laptop
+D3882,2025-06-17 17:06:00,26,Boutique,Seating,Laptop
+D2841,2025-06-17 08:32:00,11,Boutique,Checkout,Phone
+D4144,2025-06-17 16:28:00,21,Boutique,Checkout,Phone
+D4017,2025-06-17 19:17:00,3,Boutique,Checkout,Tablet
+D2320,2025-06-17 14:39:00,28,Boutique,Entrance,Tablet
+D5151,2025-06-17 19:08:00,9,Boutique,Waiting Area,Tablet
+D9476,2025-06-17 15:55:00,54,Boutique,Waiting Area,Smartwatch
+D9589,2025-06-17 16:02:00,55,Boutique,Seating,Tablet
+D4099,2025-06-17 10:05:00,13,Boutique,Checkout,Laptop
+D8235,2025-06-17 09:27:00,47,Boutique,Entrance,Smartwatch
+D3802,2025-06-17 09:58:00,11,Boutique,Waiting Area,Phone
+D1085,2025-06-17 12:23:00,9,Boutique,Checkout,Smartwatch
+D7420,2025-06-17 18:46:00,37,Boutique,Display Area,Tablet
+D2024,2025-06-17 13:18:00,27,Boutique,Waiting Area,Tablet
+D4636,2025-06-17 14:03:00,4,Boutique,Waiting Area,Tablet
+D3820,2025-06-17 12:31:00,29,Boutique,Seating,Tablet
+D1823,2025-06-17 19:29:00,42,Boutique,Waiting Area,Tablet
+D7606,2025-06-17 14:16:00,8,Boutique,Entrance,Laptop
+D9057,2025-06-17 16:49:00,29,Boutique,Display Area,Laptop
+D8722,2025-06-17 17:15:00,32,Boutique,Display Area,Laptop
+D7820,2025-06-17 18:09:00,51,Boutique,Checkout,Laptop
+D1230,2025-06-17 09:10:00,43,Boutique,Waiting Area,Laptop
+D7073,2025-06-17 09:57:00,5,Boutique,Display Area,Laptop
+D1503,2025-06-17 08:39:00,36,Boutique,Entrance,Phone
+D4680,2025-06-17 16:13:00,40,Boutique,Entrance,Laptop
+D5343,2025-06-17 10:58:00,47,Boutique,Display Area,Smartwatch
+D1886,2025-06-17 16:30:00,49,Boutique,Entrance,Tablet
+D4063,2025-06-17 12:22:00,14,Boutique,Waiting Area,Laptop
+D5546,2025-06-17 12:13:00,32,Boutique,Seating,Tablet
+D8607,2025-06-17 14:57:00,14,Boutique,Seating,Laptop
+D6178,2025-06-17 09:40:00,39,Boutique,Seating,Phone
+D8796,2025-06-17 11:36:00,45,Boutique,Entrance,Tablet
+D6236,2025-06-17 10:13:00,47,Boutique,Waiting Area,Tablet
+D7229,2025-06-17 14:38:00,39,Boutique,Display Area,Phone
+D2927,2025-06-17 19:12:00,58,Boutique,Waiting Area,Tablet
+D7326,2025-06-17 14:30:00,49,Boutique,Display Area,Tablet
+D7758,2025-06-17 14:40:00,7,Boutique,Display Area,Phone
+D4145,2025-06-17 19:43:00,9,Boutique,Waiting Area,Tablet
+D9634,2025-06-17 10:33:00,2,Boutique,Seating,Smartwatch
+D8218,2025-06-17 10:59:00,41,Boutique,Checkout,Phone
+D3075,2025-06-17 12:04:00,25,Boutique,Seating,Smartwatch
+D7512,2025-06-17 10:38:00,41,Boutique,Seating,Tablet
