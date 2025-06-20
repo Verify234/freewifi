@@ -2,7 +2,7 @@
 import streamlit as st
 from auth import login_user
 from splash import splash_page
-from insights import analytics_dashboard
+from insights import analytics_dashboard, load_business_data
 from ai_models import show_ai_insights
 from automation import automation_controls
 from config import init_config
