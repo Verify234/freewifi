@@ -1,6 +1,7 @@
 # --- automation.py ---
 import streamlit as st
 import pandas as pd
+ import os
 
 def automation_controls():
     st.header("⚙️ Automation Settings")
@@ -24,6 +25,7 @@ def automation_controls():
 
     if uploaded_file:
         save_path = f"connection_logs/{business_type}.csv"
+            os.makedirs("connection_logs", exist_ok=True)
         with open(save_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
         st.success(f"✅ Uploaded and saved as {save_path}")
