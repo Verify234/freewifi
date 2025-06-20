@@ -18,7 +18,7 @@ def show_ai_insights():
     ]
     business_type = st.selectbox("Select Business Type", business_options)
 
-    file_path = f"connection_logs/connection_logs_{business_type}.csv"
+    file_path = f"connection_logs/{business_type}.csv"
 
     try:
         df = pd.read_csv(file_path)
