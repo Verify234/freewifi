@@ -11,3 +11,16 @@ def automation_controls():
     if st.button("Save Rule"):
         st.success(f"Rule saved: {trigger} → {action}")
         # Save rule to config DB or file (for future expansion)
+
+def automation_controls():
+    st.subheader("📤 Upload New Business Dataset")
+
+    business_type = st.selectbox("Business Type", ["Boutique", "Business Cafe", "Hospital", "Restaurant", "Supermarket"])
+    uploaded_file = st.file_uploader("Upload CSV", type="csv")
+
+    if uploaded_file:
+        save_path = f"connection_logs/{business_type}.csv"
+        with open(save_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+        st.success(f"✅ Uploaded and saved as {save_path}")
+
