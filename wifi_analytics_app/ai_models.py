@@ -215,29 +215,27 @@ def show_ai_insights():
                         st.markdown("- **Insight:** **'General Boutique Visitors'**. Diverse interests.")
                         st.markdown("- **Strategy:** Showcase best-sellers, general seasonal promotions, or visual merchandising updates to attract broader attention.")
                 
-
             # Visualization of Clusters (using Plotly for interactivity)
             if len(available_clustering_features) >= 2:
                 st.subheader("Visualizing Customer Clusters")
                 st.write(f"Scatter plot showing clusters based on '{available_clustering_features[0]}' and '{available_clustering_features[1]}'.")
+
+                # Prepare hover_data: Start with clustering features
+                plot_hover_data = available_clustering_features[:] # Make a copy of the list
+
+                # Add a unique identifier to hover_data if it exists in the DataFrame
+                if 'device_id' in df.columns:
+                    plot_hover_data.append('device_id')
+                elif 'Visitor ID' in df.columns: # As a fallback, though the error suggests this is not the case
+                    plot_hover_data.append('Visitor ID')
+                # No 'else' needed here, as we don't want to error if no ID column found for hover
+
                 fig = px.scatter(df, x=available_clustering_features[0], y=available_clustering_features[1],
                                  color='Cluster', title='Customer Clusters (K-Means)',
-                                 hover_data=available_clustering_features + ['Visitor ID'])
+                                 hover_data=plot_hover_data) # Use the dynamically prepared list
                 st.plotly_chart(fig)
             else:
                 st.warning("Not enough varying numeric features for a 2D scatter plot of clusters after cleaning.")
-
-        else:
-            st.warning("🔍 Insufficient data (less than 3 rows) or not enough suitable numeric features (less than 2) for robust clustering. Showing general analytics instead.")
-            raise ValueError("Insufficient data or features for clustering.") # Will jump to fallback visualizations
-
-    except (FileNotFoundError, ValueError) as e: # Catch ValueError from insufficient data too
-        st.error(f"🚫 Error loading or processing data for AI Insights: {e}")
-        st.write("Please ensure the CSV file exists in the `connection_logs` directory and contains relevant data.")
-        st.write(f"**Expected file path:** `{file_path}`")
-        if df.empty:
-            st.warning("No data could be loaded. Please check your data files.")
-            return # Exit if no data at all
 
         # --- Fallback Visualizations (General Analytics) ---
         st.subheader("📈 General WiFi Analytics Visualizations (Fallback)")
