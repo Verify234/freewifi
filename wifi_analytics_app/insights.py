@@ -33,3 +33,8 @@ def analytics_dashboard():
             st.plotly_chart(fig)
     else:
         st.warning("No data to display.")
+        
+        required_columns = {"timestamp", "device_type", "duration"}
+if not required_columns.issubset(df.columns):
+    st.error("Missing required columns in dataset.")
+
