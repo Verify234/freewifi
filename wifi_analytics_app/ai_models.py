@@ -1,30 +1,25 @@
-# --- ai_models.py ---
-import streamlit as st
-import pandas as pd
 from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
+import pandas as pd
+import streamlit as st
 
 def show_ai_insights():
-    st.header("🤖 AI-Powered Insights")
+    st.subheader("🤖 AI-Powered Insights")
+
     try:
-        df = pd.read_csv("connection_logs.csv", names=["email", "phone", "location", "timestamp"])
-        df["timestamp"] = pd.to_datetime(df["timestamp"])
-        df["hour"] = df["timestamp"].dt.hour
-        df["day"] = df["timestamp"].dt.dayofweek
+        df = pd.read_csv("connection_logs/restaurant.csv")  # Or dynamic selection
+        features = df.select_dtypes(include=['int64', 'float64'])
 
-        # Simple feature matrix
-        X = df[["hour", "day"]]
+        if features.shape[0] < 2:
+            st.warning("Not enough data for clustering. Need at least 2 records.")
+            return
 
-        kmeans = KMeans(n_clusters=3)
-        df["cluster"] = kmeans.fit_predict(X)
+        n_clusters = min(3, features.shape[0])  # Adjust cluster count
+        kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+        kmeans.fit(features)
 
-        st.subheader("Customer Segmentation")
-        fig, ax = plt.subplots()
-        scatter = ax.scatter(df["hour"], df["day"], c=df["cluster"], cmap="viridis")
-        ax.set_xlabel("Hour")
-        ax.set_ylabel("Day of Week")
-        st.pyplot(fig)
+        df['Cluster'] = kmeans.labels_
+        st.write("Clustered Insights:")
+        st.dataframe(df.head())
 
-        st.success("AI segmentation complete. 3 clusters identified.")
     except Exception as e:
         st.error(f"AI Insight failed: {e}")
