@@ -7,6 +7,7 @@ from ai_models import show_ai_insights
 from automation import automation_controls
 from config import init_config
 from insights import load_business_data
+import os
 
 init_config()
 
@@ -41,3 +42,29 @@ def main_dashboard():
         # example: show_ai_insights(df)
     else:
         st.warning("No data loaded.")
+        
+def load_business_data(business_type):
+    file_map = {
+        "Restaurant": "connection_logs_restaurant.csv",
+        "Hospital": "connection_logs_hospital.csv",
+        "Business Cafe": "connection_logs_business_cafe.csv",
+        "Boutique": "connection_logs_boutique.csv",
+        "Supermarket": "connection_logs_supermarket.csv"
+    }
+
+    file_name = file_map.get(business_type)
+    file_path = os.path.join("wifi_analytics_app", "connection_logs", file_name)
+
+    if not os.path.exists(file_path):
+        st.error(f"File not found: {file_path}")
+        return None
+
+    return pd.read_csv(file_path)
+
+# Example usage in your app:
+business_type = st.selectbox("Select a business type", list(file_map.keys()))
+df = load_business_data(business_type)
+if df is not None:
+    st.write(df)
+
+
