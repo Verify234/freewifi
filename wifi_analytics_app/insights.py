@@ -34,7 +34,12 @@ def analytics_dashboard():
     else:
         st.warning("No data to display.")
         
-        required_columns = {"timestamp", "device_type", "duration"}
+        required_columns = {"timestamp", "device_type", "duration"}  # or whatever columns your app expects
+
+if not required_columns.issubset(df.columns):
+    st.error("Uploaded file is missing required columns.")
+
+        
 if not required_columns.issubset(df.columns):
     st.error("Missing required columns in dataset.")
 
