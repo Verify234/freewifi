@@ -31,6 +31,7 @@ def load_business_data(business_type):
 
     return pd.read_csv(file_path)
 
+
 def analytics_dashboard():
     st.header("📊 WiFi Analytics Dashboard")
     df = load_data()
