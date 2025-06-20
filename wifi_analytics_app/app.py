@@ -7,6 +7,21 @@ from ai_models import show_ai_insights
 from automation import automation_controls
 from config import init_config
 from insights import load_business_data
+import zipfile
+import os
+
+def extract_connection_logs():
+    zip_path = "connection_logs_by_business.zip"  # Keep in project root!
+    extract_dir = "connection_logs"
+
+    if not os.path.exists(extract_dir):
+        os.makedirs(extract_dir, exist_ok=True)
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            zip_ref.extractall(extract_dir)
+        print("✅ connection_logs extracted successfully.")
+
+extract_connection_logs()
+
 
 init_config()
 
