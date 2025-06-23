@@ -39,7 +39,7 @@ init_config()
 # --- Animated Login Page with Help Links ---
 def animated_login():
     st.markdown('<div class="login-container">', unsafe_allow_html=True)
-    st.image("https://img.icons8.com/color/96/wi-fi.png", width=72)
+    st.image("https://th.bing.com/th?q=FreeWifi+PNG+Password&w=120&h=120&c=1&rs=1&qlt=70&r=0&o=7&cb=1&pid=InlineBlock&rm=3&mkt=en-WW&cc=NG&setlang=en&adlt=moderate&t=1&mw=247", width=72)
     st.markdown("<h2 style='text-align:center;'>Welcome to FreeWiFi Analytics</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align:center;color:gray;'>Please sign in to continue</p>", unsafe_allow_html=True)
     username = st.text_input("Username", key="username")
