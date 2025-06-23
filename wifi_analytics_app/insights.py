@@ -12,7 +12,7 @@ def load_business_data(business_type):
     file_name = f"{formatted_business_type}.csv"
     file_path = os.path.join(data_dir, file_name)
 
-    st.write(f"Attempting to load: {file_path}")
+    #st.write(f"Attempting to load: {file_path}")
 
     if os.path.exists(file_path):
         try:
@@ -36,7 +36,7 @@ def analytics_dashboard():
         # Check for expected duration column and rename if necessary
         if 'session_duration_minutes' in df.columns and 'duration' not in df.columns:
             df.rename(columns={'session_duration_minutes': 'duration'}, inplace=True)
-            st.info("Renamed 'session_duration_minutes' to 'duration' for compatibility.")
+            #st.info("Renamed 'session_duration_minutes' to 'duration' for compatibility.")
 
         # Define all required columns, including the 'duration' column (now potentially renamed)
         required_columns_for_dashboard = {"timestamp", "device_type", "duration"}
