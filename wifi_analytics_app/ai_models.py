@@ -14,7 +14,7 @@ sns.set_theme(style="whitegrid")
 def show_ai_insights():
     st.header("🤖 AI-Powered Customer Insights: A Data Scientist's Deep Dive")
     st.write("""
-    This section showcases how a data scientist would leverage advanced AI techniques to transform raw WiFi connection logs into actionable marketing intelligence.
+    This section showcases how a data scientist or the business owner would leverage advanced AI techniques to transform raw WiFi connection logs into actionable marketing intelligence.
     We'll move beyond simple metrics to uncover hidden customer segments and predict future behaviors.
     """)
 
@@ -33,7 +33,7 @@ def show_ai_insights():
     file_path = os.path.join(data_dir, file_name)
 
     # For debugging
-    st.info(f"Attempting to load data from: `{file_path}` for AI insights.")
+    #st.info(f"Attempting to load data from: `{file_path}` for AI insights.")
 
     df = pd.DataFrame() # Initialize df to avoid UnboundLocalError in finally block
 
