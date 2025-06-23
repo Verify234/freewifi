@@ -189,4 +189,4 @@ def show_ai_insights():
 
 # Streamlit entry point
 #if __name__ == "__main__" or st._is_running_with_streamlit:
-    show_ai_insights()
+    #show_ai_insights()
