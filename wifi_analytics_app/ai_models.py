@@ -54,7 +54,7 @@ def show_ai_insights():
             df['hour_of_day'] = df['timestamp'].dt.hour
             df['day_of_week'] = df['timestamp'].dt.dayofweek # Monday=0, Sunday=6
             df['is_weekend'] = df['day_of_week'].apply(lambda x: 1 if x >= 5 else 0)
-            st.info("Extracted 'hour_of_day', 'day_of_week', and 'is_weekend' from timestamp.")
+            #st.info("Extracted 'hour_of_day', 'day_of_week', and 'is_weekend' from timestamp.")
         else:
             st.warning("`timestamp` column not found. Some time-based features will be unavailable for AI insights.")
 
@@ -70,7 +70,7 @@ def show_ai_insights():
             # If 'frequent_visitor' column does not exist, synthetically generate it.
             # In a real scenario, this would be derived from unique user IDs and multiple visits.
             df['frequent_visitor'] = np.random.choice([0, 1], size=len(df), p=[0.7, 0.3]) # 0=New, 1=Returning
-            st.info("Synthetically generated 'frequent_visitor' status (0=New, 1=Returning) for demonstration as it was not found.")
+            #st.info("Synthetically generated 'frequent_visitor' status (0=New, 1=Returning) for demonstration as it was not found.")
         # Ensure it's integer type
         df['frequent_visitor'] = df['frequent_visitor'].astype(int)
 
