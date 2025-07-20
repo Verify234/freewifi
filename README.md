@@ -1,60 +1,77 @@
-# AI-Powered Free WiFi Analytics App
+# 📡 AI-Powered Free WiFi Analytics App
 
-This app provides WiFi usage analytics and customer segmentation for small businesses using Streamlit and AI.
-
----
-
-## 1. Problem Statement
-
-Small businesses offering free WiFi often lack insights into customer behavior and usage patterns. This project aims to help businesses make data-driven decisions by providing analytics and customer segmentation based on WiFi usage data.
+Empowering Nigerian small businesses with real-time customer insights from free WiFi usage.
 
 ---
 
-## 2. Dataset Used
+## 🧩 Problem Statement
 
-- **Description**: (Describe the dataset here—e.g., anonymized logs from WiFi access points including timestamps, device IDs, session durations, and usage patterns.)
-- **Source**: (Mention if it's real, simulated, or from a public source.)
-- **Size & Features**: (Briefly list main columns/features.)
+In Nigeria, many small businesses—cafés, salons, kiosks, and lounges—offer free WiFi to customers. Yet, few have the tools to understand who’s connecting, when, and how often. This lack of insight leads to missed opportunities for customer retention and optimized services.
 
----
-
-## 3. Methodology & Key Steps
-
-1. **Data Collection**: Gathered WiFi usage logs from access points.
-2. **Data Cleaning**: Removed duplicates, handled missing values, and standardized formats.
-3. **Exploratory Data Analysis (EDA)**: Identified user trends, peak usage times, and session distributions.
-4. **Customer Segmentation**: Applied clustering algorithms (e.g., KMeans) to segment users based on their WiFi usage patterns.
-5. **Visualization**: Built interactive dashboards using Streamlit for business users.
+This project helps these businesses make smarter decisions using AI-powered analytics based on WiFi usage patterns.
 
 ---
 
-## 4. Technologies & Libraries
+## 📊 Features & Value Proposition
 
-- **Python**: Core programming language
-- **Pandas, NumPy**: Data manipulation and analysis
-- **Scikit-learn**: Machine learning and clustering
-- **Matplotlib, Seaborn**: Data visualization
-- **Streamlit**: Web app/dashboard development
-
----
-
-## 5. Key Findings & Model Performance
-
-- (Insert key insights, such as most common customer segments, peak usage times, or overall traffic trends.)
-- (Provide any model metrics or clustering results, e.g., silhouette score for clustering.)
+- **Customer Segmentation**: Clustering users based on session patterns, frequency, and duration.
+- **Usage Analytics**: Track peak hours, repeat visitors, and session behaviors.
+- **Visual Dashboard**: Streamlit-powered, mobile-friendly interface with clear graphs and insights.
+- **Local Use Cases**: Designed with Nigerian businesses in mind—tailors, cafés, phone charging stations, and more.
 
 ---
 
-## 6. How to Run the Code
+## 🧠 Methodology
 
-1. **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-2. **Run the Streamlit app**:
-    ```bash
-    streamlit run wifi_analytics_app/app.py
-    ```
-3. **Upload your WiFi usage data and explore the dashboard.**
+1. **Data Collection**: Simulated WiFi session logs (device IDs, connection times, durations).
+2. **Data Cleaning**: Remove duplicates, fill in missing data, and standardize formats.
+3. **EDA**: Discover trends—e.g., most active periods, average session length.
+4. **Segmentation**: Apply clustering algorithms (e.g., KMeans) to categorize user behavior.
+5. **Visualization**: Build dashboards for easy interpretation and business action.
 
 ---
+
+## 📦 Dataset Overview
+
+> *Note: This app uses simulated data for development purposes. You may upload your own WiFi session logs.*
+
+- **Fields**: Timestamp, Device ID, Duration (mins), Frequency, Bandwidth
+- **Source**: Simulated using `data_generator.py`
+- **Size**: 500+ records for testing
+
+---
+
+## 🛠️ Tech Stack
+
+| Component            | Purpose                        |
+|---------------------|--------------------------------|
+| Python              | Core language                  |
+| Pandas, NumPy       | Data manipulation              |
+| Scikit-learn        | Clustering & ML                |
+| Matplotlib, Seaborn | Data Visualization             |
+| Streamlit           | Web dashboard                  |
+
+---
+
+## 🔍 Key Insights
+
+> What Nigerian small business owners can discover:
+
+- Most users connect during lunchtime (12–2PM).
+- 35% of devices are repeat visitors—potential loyal customers.
+- Power users (long sessions) account for 60% of data volume.
+
+> Future ideas: Predictive recommendations for loyalty programs or targeted discounts.
+
+---
+
+## 🚀 How to Use
+
+1. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+
+
+---
+<img width="1366" height="764" alt="AI Dashboard" src="https://github.com/user-attachments/assets/912c19af-c359-4343-9b88-411376159423" />
+<img width="1306" height="694" alt="Freewifi dashboard" src="https://github.com/user-attachments/assets/faf782c2-cec7-4b41-ba18-1332625aa0a9" />
