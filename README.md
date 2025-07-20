@@ -38,6 +38,7 @@ This project helps these businesses make smarter decisions using AI-powered anal
 - **Fields**: Timestamp, Device ID, Duration (mins), Frequency, Bandwidth
 - **Source**: Simulated using `data_generator.py`
 - **Size**: 500+ records for testing
+<img width="1306" height="694" alt="Image" src="https://github.com/user-attachments/assets/f277614e-cc80-4b73-a22b-24a027c1d23c" />
 
 ---
 
